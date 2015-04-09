@@ -1,0 +1,6 @@
+quotes_anyone: anyone
+quotes_nobody_said_that: I don't remember %s saying anything like that.
+quotes_needs_args: I can't remember nothing! Double negatives. Sometimes appropriate.
+quotes_remember_self: "You can't remember yourself. Say something funnier next time, and maybe someone else will remember you."
+quotes_already_remembered: "Yeah, I already remembered that. Apparently you didn't."
+quotes_remember_success: "Remembering %s: %s"

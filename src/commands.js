@@ -20,7 +20,7 @@ function doQuotes(route, args, count) {
             if (user) {
                 name = user.nick;
             }
-            route.send('I don\'t remember ' + name + ' saying anything like that.');
+            route.send('?quotes_nobody_said_that', name);
         }
     }
 
@@ -59,7 +59,8 @@ module.exports = {
         quote = args.join(' ');
 
         if (quote.length === 0) {
-            route.send("I can't remember nothing! Double negatives. Sometimes appropriate.");
+            route.send('?quotes_needs_args');
+            return;
         }
 
         var query = bot.db.schemas.message.findOne({ text : new RegExp(quote, 'i'), outbound : false });
@@ -75,14 +76,12 @@ module.exports = {
         query.exec(function (err, quotedata) {
             if (quotedata) {
                 if (route.user._id.toString() === quotedata.user_id.toString()) {
-                    route.send('You can\'t remember yourself. Say something funnier next time, and maybe someone else will remember you.');
+                    route.send('?quotes_remember_self');
                 } else {
                     bot.db.schemas.quote.findOne({ message_id : quotedata.id }, function (err, priordata) {
                         if (priordata) {
-                            route.send('Yeah, I already remembered that. Apparently you didn\'t.');
+                            route.send('?quotes_already_remembered');
                         } else {
-                            route.send('Remembering ' + quotedata.nickname + ': ' + quotedata.text);
-
                             bot.db.schemas.quote.create({
                                 message_id : quotedata.id,
                                 user_id : route.user.id,
@@ -96,7 +95,7 @@ module.exports = {
                 var name = 'anyone';
                 if (user) { name = user.nick; }
 
-                route.send('I don\'t remember ' + name + ' saying "' + quote + '"');
+                route.send('?quotes_nobody_said_that', name);
             }
         });
     },
