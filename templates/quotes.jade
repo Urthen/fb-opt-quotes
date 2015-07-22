@@ -1,10 +1,13 @@
-script(src='//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js')
-script(src='static/table.js')
+script(src='//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js')
+script(src='//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js')
+script(src='//cdn.datatables.net/scroller/1.2.2/js/dataTables.scroller.min.js')
+script(src='#{module_root}/static/table.js')
+link(rel='stylesheet', href='#{module_root}/static/table.css')
 
 .container-fluid
     .row
         .col-xs-12
-            h1 Quotes
+            h1.pull-left Quotes
             table.table.table-striped#maintable
                 thead
                     tr
@@ -21,6 +24,6 @@ script(src='static/table.js')
                         tr
                             td= quote.text
                             td= quote.nick
-                            td
+                            td.controls
                                 a(href="#")
-                                    span.glyphicon.glyphicon-remove
+                                    span.glyphicon.glyphicon-remove.text-danger

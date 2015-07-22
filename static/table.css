@@ -1,0 +1,20 @@
+.container-fluid h1:first-child {
+    margin: 4px 0 0;
+}
+
+#maintable.table > thead > tr > th,
+#maintable.table > tbody > tr > th,
+#maintable.table > tfoot > tr > th,
+#maintable.table > thead > tr > td,
+#maintable.table > tbody > tr > td,
+#maintable.table > tfoot > tr > td {
+    padding: 4px 8px;
+}
+
+#maintable td.controls {
+    min-width: 60px;
+}
+
+.dataTables_scrollBody {
+    border-top: 2px solid #ddd;
+}
