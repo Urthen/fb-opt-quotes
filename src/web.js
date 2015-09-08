@@ -13,6 +13,10 @@ module.exports = function (web) {
 		});
 	}));
 
+	app.locals = {
+		module_root : '/modules/quotes'
+	};
+
 	app.use('/static', web.express.static(__dirname + '/../static/'));
 
 	web.addModuleApp('/quotes/', app, 'Quotes');

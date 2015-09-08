@@ -82,6 +82,7 @@ module.exports = {
                         if (priordata) {
                             route.send('?quotes_already_remembered');
                         } else {
+                            route.send('?quotes_remember_success', quotedata.nickname, quotedata.text);
                             bot.db.schemas.quote.create({
                                 message_id : quotedata.id,
                                 user_id : route.user.id,
