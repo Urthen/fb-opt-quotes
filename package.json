@@ -1,10 +1,10 @@
 {
   "name": "fb-opt-quotes",
-  "version": "0.1.0",
-  "description": "A lovely Fritbot module",
+  "version": "0.1.1",
+  "description": "Fritbot Quotation module",
   "repository": {
     "type": "git",
-    "url": "git://github.com/urthen/fb-opt-quotes.git"
+    "url": "git://github.com/fritbot/fb-opt-quotes.git"
   },
   "dependencies": {
     "lodash": ""
@@ -22,7 +22,7 @@
   "author": "Michael Pratt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/urthen/fb-opt-quotes/issues"
+    "url": "https://github.com/fritbot/fb-opt-quotes/issues"
   },
-  "homepage": "https://github.com/urthen/fb-opt-quotes"
+  "homepage": "https://github.com/fritbot/fb-opt-quotes"
 }
